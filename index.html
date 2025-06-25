@@ -2,122 +2,89 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8" />
-  <title>Mission Frigo - Accueil</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      margin: 0;
-      background: #fffaf5;
-      color: #333;
-    }
-
-    header {
-      background: #ff7043;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    .intro {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .intro p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
-
-    .stats {
-      background: #fbe9e7;
-      padding: 2rem;
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      max-width: 1000px;
-      margin: auto;
-      border-top: 2px solid #ffccbc;
-    }
-
-    .stat-box {
-      background: white;
-      border-left: 5px solid #ff7043;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-
-    .stat-box h2 {
-      font-size: 2rem;
-      color: #ff7043;
-      margin: 0;
-    }
-
-    .stat-box p {
-      margin-top: 0.5rem;
-      font-size: 1rem;
-    }
-
-    .cta {
-      text-align: center;
-      margin: 3rem 0;
-    }
-
-    .cta a {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background: #66bb6a;
-      color: white;
-      font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 1.2rem;
-      transition: background 0.3s;
-    }
-
-    .cta a:hover {
-      background: #558b2f;
-    }
-  </style>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Mission Frigo - Accueil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
 <body>
-  <header>
+
+<header>
     <h1>🥕 Mission Frigo</h1>
     <p>Sauve ton repas, sauve la planète</p>
-  </header>
-  <section class="intro">
-    <p>Bienvenue sur Mission Frigo, un mini-jeu éducatif pour lutter contre le gaspillage alimentaire. Apprends à
-      repérer les bons gestes, à cuisiner malin et à préserver notre planète, tout en t’amusant !</p>
-  </section>
-  <section class="stats">
-    <div class="stat-box">
-      <h2>1/3</h2>
-      <p>de la nourriture produite dans le monde est gaspillée</p>
-    </div>
-    <div class="stat-box">
-      <h2>30 kg</h2>
-      <p>de nourriture jetés par personne et par an en France</p>
-    </div>
-    <div class="stat-box">
-      <h2>10%</h2>
-      <p>des émissions mondiales de gaz à effet de serre sont liées au gaspillage alimentaire</p>
-    </div>
-    <div class="stat-box">
-      <h2>Simple</h2>
-      <p>Garder ses restes peut déjà faire une grande différence</p>
-    </div>
-  </section>
-  <div class="cta"> <a href="./pages/lv1.html">🎮 Jouer</a> </div>
-</body>
+</header>
 
+<main>
+    <section class="intro">
+        <p>
+            Bienvenue sur <strong>Mission Frigo</strong>, un mini-jeu éducatif pour lutter contre le gaspillage alimentaire.
+            Apprends à repérer les bons gestes, à cuisiner malin et à préserver notre planète — tout en t’amusant !
+        </p>
+    </section>
+
+    <section class="stats">
+        <div class="stat-box">
+            <h2>1/3</h2>
+            <p>de la nourriture produite dans le monde est gaspillée</p>
+        </div>
+        <div class="stat-box">
+            <h2>30 kg</h2>
+            <p>jetés chaque année par personne en France</p>
+        </div>
+        <div class="stat-box">
+            <h2>10%</h2>
+            <p>des émissions mondiales de CO₂ dues au gaspillage</p>
+        </div>
+        <div class="stat-box">
+            <h2>Simple</h2>
+            <p>Un bon réflexe suffit à faire la différence</p>
+        </div>
+    </section>
+
+    <div class="cta">
+        <a href="./pages/lv1.html">🎮 Commencer à jouer</a>
+    </div>
+
+    <section class="card-grid">
+        <div class="card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">🥖 Savais-tu que... ?</div>
+                <div class="card-back">
+                    10 millions de tonnes de nourriture sont gaspillées chaque année en France !
+                </div>
+            </div>
+        </div>
+
+        <div class="card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">🍎 Le gaspillage chez toi ?</div>
+                <div class="card-back">
+                    Chaque foyer jette en moyenne 30 kg d’aliments par an.
+                </div>
+            </div>
+        </div>
+
+        <div class="card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">⚡ Impact énergétique</div>
+                <div class="card-back">
+                    Le gaspillage alimentaire représente près de 10% des émissions de gaz à effet de serre.
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    © 2025 - Hackathon IA for Good - Mission Frigo
+</footer>
+
+<script>
+    function flipCard(card) {
+        card.classList.toggle("flipped");
+    }
+</script>
+
+</body>
 </html>
