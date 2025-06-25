@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Mission Frigo - Niveau 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background: #f2f2f2;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background: #ff7043;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .fridge {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .zone {
+            border: 2px dashed #bbb;
+            background: #fff;
+            width: 45%;
+            min-height: 300px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .zone h2 {
+            margin-top: 0;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            margin: 10px auto;
+            background: #fdd835;
+            border-radius: 10px;
+            cursor: grab;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #333;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .correct {
+            background: #66bb6a !important;
+        }
+
+        .incorrect {
+            background: #ef5350 !important;
+        }
+
+        .score {
+            font-size: 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🥫 Mission Frigo - Produits secs (Niveau 5)</h1>
+    <div class="score">Score : <span id="score">0</span></div>
+    <div class="fridge">
+        <div class="zone" id="fridge">
+            <h2>Ton Placard 🧺</h2>
+            <div class="item" draggable="true" data-good="true">Pâtes DDM dépassée</div>
+            <div class="item" draggable="true" data-good="false">Farine moisie</div>
+            <div class="item" draggable="true" data-good="true">Riz sec</div>
+            <div class="item" draggable="true" data-good="false">Céréales humides</div>
+        </div>
+        <div class="zone" id="save-zone">
+            <h2>Produits récupérables ✅</h2>
+        </div>
+    </div>
+    <script src="../javascript/lv1.js"></script>
+</body>
+
+</html>
