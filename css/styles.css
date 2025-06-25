@@ -153,3 +153,61 @@ footer {
     color: #666;
     border-top: 1px solid #ddd;
 }
+
+/* Styles spécifiques supplémentaires */
+h1 {
+    background: #ff7043;
+    color: white;
+    padding: 20px;
+    margin: 0;
+}
+
+.fridge {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.zone {
+    border: 2px dashed #bbb;
+    background: #fff;
+    width: 45%;
+    min-height: 300px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.zone h2 {
+    margin-top: 0;
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    background: #fdd835;
+    border-radius: 10px;
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.correct {
+    background: #66bb6a !important;
+}
+
+.incorrect {
+    background: #ef5350 !important;
+}
+
+.score {
+    font-size: 20px;
+    margin: 10px;
+}
