@@ -1,5 +1,5 @@
 :root {
-    --orange: #ff7043;
+    --orange: var(--green);
     --green: #66bb6a;
     --light-bg: #fffaf5;
     --highlight: #fbe9e7;
@@ -17,7 +17,7 @@ body {
 }
 
 header {
-    background: var(--orange);
+    background: var(--green);
     color: white;
     padding: 2rem 1rem;
     text-align: center;
@@ -62,7 +62,7 @@ main {
 
 .stat-box {
     background: white;
-    border-left: 5px solid var(--orange);
+    border-left: 5px solid var(--green);
     padding: 1.5rem;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
@@ -70,7 +70,7 @@ main {
 
 .stat-box h2 {
     font-size: 2rem;
-    color: var(--orange);
+    color: var(--green);
     margin: 0;
 }
 
@@ -78,7 +78,9 @@ main {
     text-align: center;
     margin: 3rem 0;
 }
-
+a {
+    text-decoration: none;
+}
 .cta  a{
     display: inline-block;
     padding: 1rem 2rem;
@@ -156,7 +158,7 @@ footer {
 
 /* Styles spécifiques supplémentaires */
 h1 {
-    background: #ff7043;
+    background: var(--green);
     color: white;
     padding: 20px;
     margin: 0;
@@ -185,6 +187,7 @@ h1 {
 }
 
 .item {
+    text-align: center;
     width: 100px;
     height: 100px;
     margin: 10px auto;
@@ -208,8 +211,13 @@ h1 {
 }
 
 .score {
+    color: var(--green);
+    text-align: center;
     font-size: 20px;
     margin: 10px;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: xx-large;
 }
 
 #next-btn {

@@ -48,11 +48,39 @@ function checkAllGoodsSaved() {
     const goodItems = document.querySelectorAll(".item[data-good='true']");
     // Vérifie que chaque élément se trouve dans la zone de sauvegarde
     const allSaved = Array.from(goodItems).every(item => saveZone.contains(item));
-    
+
     if (allSaved) {
         nextBtn.style.display = "block";
+
+        // Détermination du niveau à partir du nom du fichier (ex. "lv1.html" pour le niveau 1)
+        let levelMatch = window.location.pathname.match(/lv(\d)\.html/);
+        let currentLevel = levelMatch ? levelMatch[1] : "default";
+
+        // Messages personnalisés pour chaque niveau
+        const messages = {
+            "1": "Les aliments affichés (ex. Carotte et Riz cuit) sont récupérables car ils conservent leur qualité. Conseil : Vérifiez toujours les dates de péremption.",
+            "2": "Le pain dur et la purée restante sont utilisables, contrairement à l’œuf fissuré et au lait tourné. Conseil : Faites attention aux signes de détérioration.",
+            "3": "Certains fruits comme la banane tachetée et les pommes fripées peuvent être transformés, mais les fruits moisies doivent être écartés. Conseil : Soyez attentif à leur aspect.",
+            "4": "Les restes de viandes cuisinées sont sûrs, tandis que la viande crue odorante ne l'est pas. Conseil : Manipulez soigneusement les viandes.",
+            "5": "Même si la DDM est dépassée, certains produits secs restent consommables, contrairement aux produits humides. Conseil : Stockez vos produits secs dans un endroit frais et sec."
+        };
+        const adviceMsg = messages[currentLevel] || "Les aliments récupérables sont ceux qui conservent leur qualité. Conseil : Inspectez toujours visuellement et vérifiez la date de péremption.";
+
+        // Création ou mise à jour du message explicatif
+        let adviceDiv = document.getElementById("advice-message");
+        if (!adviceDiv) {
+            adviceDiv = document.createElement("div");
+            adviceDiv.id = "advice-message";
+            adviceDiv.style.marginTop = "1em";
+            adviceDiv.style.padding = "0.5em";
+            adviceDiv.style.backgroundColor = "#f0f0f0";
+            adviceDiv.style.border = "1px solid #ccc";
+            nextBtn.parentNode.insertBefore(adviceDiv, nextBtn.nextSibling);
+        }
+        adviceDiv.textContent = adviceMsg;
+
         nextBtn.onclick = () => {
-            window.location.href = "./lv"+nextBtn.dataset.lv+".html?score=" + score;
+            window.location.href = "./lv" + nextBtn.dataset.lv + ".html?score=" + score;
         };
     }
 }
