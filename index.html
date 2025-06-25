@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission Frigo - Sauve ton repas !</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>🥕 Mission Frigo : Sauve ton repas !</h1>
+  <div class="score">Score : <span id="score">0</span></div>
+  <div class="fridge">
+    <div class="zone" id="fridge">
+      <h2>Ton Frigo 🧊</h2>
+      <div class="item" draggable="true" data-good="true">Carotte</div>
+      <div class="item" draggable="true" data-good="false">Yaourt périmé</div>
+      <div class="item" draggable="true" data-good="true">Riz cuit</div>
+      <div class="item" draggable="true" data-good="false">Poisson moisi</div>
+    </div>
+
+    <div class="zone" id="save-zone">
+      <h2>Sauver ce qui peut l'être ✅</h2>
+    </div>
+
+  </div>
+  <script> const items = document.querySelectorAll(".item"); const saveZone = document.getElementById("save-zone"); const scoreDisplay = document.getElementById("score"); let score = 0; items.forEach((item) => { item.addEventListener("dragstart", (e) => { e.dataTransfer.setData("text/plain", item.innerText); e.dataTransfer.setData("isGood", item.dataset.good); e.dataTransfer.setData("id", item.innerText); }); }); saveZone.addEventListener("dragover", (e) => { e.preventDefault(); }); saveZone.addEventListener("drop", (e) => { e.preventDefault(); const itemName = e.dataTransfer.getData("text/plain"); const isGood = e.dataTransfer.getData("isGood") === "true"; const id = e.dataTransfer.getData("id"); const dragged = [...document.querySelectorAll(".item")].find(el => el.innerText === id); if (!dragged) return; if (isGood) { dragged.classList.add("correct"); score += 1; } else { dragged.classList.add("incorrect"); score -= 1; } dragged.setAttribute("draggable", "false"); saveZone.appendChild(dragged); scoreDisplay.textContent = score; }); </script>
+</body>
+
+</html>
