@@ -1,0 +1,155 @@
+:root {
+    --orange: #ff7043;
+    --green: #66bb6a;
+    --light-bg: #fffaf5;
+    --highlight: #fbe9e7;
+    --card-back: #dcedc8;
+    --text: #333;
+    --border-radius: 15px;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    background: var(--light-bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+header {
+    background: var(--orange);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+main {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.intro p {
+    font-size: 1.3rem;
+}
+
+.stats {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    background: var(--highlight);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 3rem;
+}
+
+.stat-box {
+    background: white;
+    border-left: 5px solid var(--orange);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stat-box h2 {
+    font-size: 2rem;
+    color: var(--orange);
+    margin: 0;
+}
+
+.cta {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.cta a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--green);
+    color: white;
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+.cta a:hover {
+    background: #388e3c;
+}
+
+.card-grid {
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-bottom: 3rem;
+}
+
+.card {
+    perspective: 1000px;
+    cursor: pointer;
+    height: 250px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.card-front {
+    background: white;
+}
+
+.card-back {
+    background: var(--card-back);
+    transform: rotateY(180deg);
+}
+
+footer {
+    background: #f1f1f1;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    border-top: 1px solid #ddd;
+}
