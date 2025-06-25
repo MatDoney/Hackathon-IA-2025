@@ -1,87 +1,86 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Mission Frigo - Accueil</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../css/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Mission Frigo - Accueil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
+
 <body>
 
 <header>
-  <h1>🥕 Mission Frigo</h1>
-  <p>Sauve ton repas, sauve la planète</p>
+    <h1>🥕 Mission Frigo</h1>
+    <p>Sauve ton repas, sauve la planète</p>
 </header>
 
 <main>
-  <section class="intro">
-    <p>
-      Bienvenue sur <strong>Mission Frigo</strong>, le mini-jeu où chaque geste compte. Découvre comment tes choix dans la cuisine peuvent devenir des actes écologiques puissants — tout en t’amusant.
-    </p>
-  </section>
+    <section class="intro">
+        <p>
+            Bienvenue sur <strong>Mission Frigo</strong>, un mini-jeu éducatif pour lutter contre le gaspillage alimentaire.
+            Apprends à repérer les bons gestes, à cuisiner malin et à préserver notre planète — tout en t’amusant !
+        </p>
+    </section>
 
-  <section class="ecology-message">
-    <h2>🌍 Pourquoi c’est grave ?</h2>
-    <p>
-      Gaspiller un aliment, c’est gaspiller l’eau pour le cultiver, l’énergie pour le transporter, et les ressources de notre planète. C’est un coût invisible pour l’environnement… qu’on peut éviter !
-    </p>
-    <p>
-      Manger responsable, c’est simple : on respecte ce qu’on a dans le frigo.
-    </p>
-  </section>
+    <section class="stats">
+        <div class="stat-box">
+            <h2>1/3</h2>
+            <p>de la nourriture produite dans le monde est gaspillée</p>
+        </div>
+        <div class="stat-box">
+            <h2>30 kg</h2>
+            <p>jetés chaque année par personne en France</p>
+        </div>
+        <div class="stat-box">
+            <h2>10%</h2>
+            <p>des émissions mondiales de CO₂ dues au gaspillage</p>
+        </div>
+        <div class="stat-box">
+            <h2>Simple</h2>
+            <p>Un bon réflexe suffit à faire la différence</p>
+        </div>
+    </section>
 
-  <section class="stats">
-    <div class="stat-box">
-      <h2>🍽️ Réfléchir</h2>
-      <p>Pense à ce que tu as avant d’acheter. Moins de gaspillage, plus d’amour.</p>
-    </div>
-    <div class="stat-box">
-      <h2>🥦 Cuisiner malin</h2>
-      <p>Une carotte fatiguée ? Une soupe la rend heureuse.</p>
-    </div>
-    <div class="stat-box">
-      <h2>🧊 Bien conserver</h2>
-      <p>Ton congélo adore sauver des plats.</p>
-    </div>
-    <div class="stat-box">
-      <h2>💚 Écogeste</h2>
-      <p>Chaque aliment sauvé évite des déchets et du CO₂.</p>
-    </div>
-  </section>
-
-  <section class="card-grid">
-    <div class="card" onclick="flipCard(this)">
-      <div class="card-inner">
-        <div class="card-front">♻️ Le savais-tu ?</div>
-        <div class="card-back">Planifier ses repas évite de jeter sans réfléchir.</div>
-      </div>
+    <div class="cta">
+        <a href="./pages/lv1.html">🎮 Commencer à jouer</a>
     </div>
 
-    <div class="card" onclick="flipCard(this)">
-      <div class="card-inner">
-        <div class="card-front">🌱 Un petit effort</div>
-        <div class="card-back">Les restes ne sont pas tristes : ils inspirent !</div>
-      </div>
-    </div>
+    <section class="card-grid">
+        <div class="card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">🥖 Savais-tu que... ?</div>
+                <div class="card-back">
+                    10 millions de tonnes de nourriture sont gaspillées chaque année en France !
+                </div>
+            </div>
+        </div>
 
-    <div class="card" onclick="flipCard(this)">
-      <div class="card-inner">
-        <div class="card-front">💡 Astuce zéro gaspi</div>
-        <div class="card-back">Les dates de péremption ? Apprends à les comprendre.</div>
-      </div>
-    </div>
-  </section>
+        <div class="card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">🍎 Le gaspillage chez toi ?</div>
+                <div class="card-back">
+                    Chaque foyer jette en moyenne 30 kg d’aliments par an.
+                </div>
+            </div>
+        </div>
 
-  <div class="cta">
-    <a href="./pages/lv1.html">🎮 Commencer à jouer</a>
-  </div>
+        <div class="card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">⚡ Impact énergétique</div>
+                <div class="card-back">
+                    Le gaspillage alimentaire représente près de 10% des émissions de gaz à effet de serre.
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
 <footer>
-  <p>© 2025 - Hackathon IA for Good - Mission Frigo</p>
+    © 2025 - Hackathon IA for Good - Mission Frigo
 </footer>
 
 <script src="javascript/homepage.js"></script>
+
 </body>
 </html>
