@@ -2,6 +2,8 @@ const items = document.querySelectorAll(".item");
 const saveZone = document.getElementById("save-zone");
 const scoreDisplay = document.getElementById("score");
 const nextBtn = document.getElementById("next-btn");
+const validate = new Audio('../assets/validate.mp3');
+const wrong = new Audio('../assets/wrong.mp3');
 let params = new URLSearchParams(document.location.search);
 let score = parseInt(params.get("score")) || 0;
 scoreDisplay.textContent = score;
@@ -28,9 +30,11 @@ saveZone.addEventListener("drop", (e) => {
     if (isGood) {
         dragged.classList.add("correct");
         score += 1;
+        validate.play();
     } else {
         dragged.classList.add("incorrect");
         score -= 1;
+        wrong.play();
     }
     dragged.setAttribute("draggable", "false");
     saveZone.appendChild(dragged);

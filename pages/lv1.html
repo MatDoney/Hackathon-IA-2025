@@ -2,30 +2,31 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mission Frigo - Sauve ton repas !</title>
-  <link rel="stylesheet" href="../css/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mission Frigo - Sauve ton repas !</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
-  <h1>🥕 Mission Frigo : Sauve ton repas ! Niveau 1/5</h1>
-  <div class="score">Score : <span id="score">0</span></div>
-  <div class="fridge">
-    <div class="zone" id="fridge">
-      <h2>Ton Frigo 🧊</h2>
-      <div class="item" draggable="true" data-good="true">Carotte</div>
-      <div class="item" draggable="true" data-good="false">Yaourt périmé</div>
-      <div class="item" draggable="true" data-good="true">Riz cuit</div>
-      <div class="item" draggable="true" data-good="false">Poisson moisi</div>
-    </div>
+    
+    <h1>🥕 Mission Frigo : Sauve ton repas ! Niveau 1/5</h1>
+    <div class="score">Score : <span id="score">0</span></div>
+    <div class="fridge">
+        <div class="zone" id="fridge">
+            <h2>Ton Frigo 🧊</h2>
+            <div class="item" draggable="true" data-good="true">Carotte</div>
+            <div class="item" draggable="true" data-good="false">Yaourt périmé</div>
+            <div class="item" draggable="true" data-good="true">Riz cuit</div>
+            <div class="item" draggable="true" data-good="false">Poisson moisi</div>
+        </div>
 
-    <div class="zone" id="save-zone">
-      <h2>Sauver ce qui peut l'être ✅</h2>
+        <div class="zone" id="save-zone">
+            <h2>Sauver ce qui peut l'être ✅</h2>
+        </div>
     </div>
-  </div>
-  <button id="next-btn" data-lv="2" style="display:none;">Niveau Suivant</button>
-  <script src="../javascript/lv1.js"></script>
+    <button id="next-btn" data-lv="2" style="display:none;">Niveau Suivant</button>
+    <script src="../javascript/lv1.js"></script>
 </body>
 
 </html>
