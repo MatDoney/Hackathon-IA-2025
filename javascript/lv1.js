@@ -52,3 +52,67 @@ function checkAllGoodsSaved() {
         };
     }
 }
+
+// Ajout du support tactile pour mobile
+items.forEach((item) => {
+    item.addEventListener("touchstart", handleTouchStart, { passive: false });
+});
+
+function handleTouchStart(e) {
+    e.preventDefault();
+    const item = e.currentTarget;
+    // Calculer le décalage initial entre le point de contact et la position de l'élément
+    item.initialX = e.touches[0].clientX - item.getBoundingClientRect().left;
+    item.initialY = e.touches[0].clientY - item.getBoundingClientRect().top;
+
+    // Passer l'élément en mode absolu pour le déplacer librement
+    item.style.position = "absolute";
+    item.style.zIndex = "1000";
+
+    item.addEventListener("touchmove", handleTouchMove, { passive: false });
+    item.addEventListener("touchend", handleTouchEnd, { passive: false });
+}
+
+function handleTouchMove(e) {
+    e.preventDefault();
+    const item = e.currentTarget;
+    const touch = e.touches[0];
+    // Déplacer l'élément en fonction du mouvement tactile
+    item.style.left = (touch.clientX - item.initialX) + "px";
+    item.style.top = (touch.clientY - item.initialY) + "px";
+}
+
+function handleTouchEnd(e) {
+    const item = e.currentTarget;
+    const touch = e.changedTouches[0];
+    const dropZoneRect = saveZone.getBoundingClientRect();
+
+    // Vérifier si le point de fin de contact se trouve dans la zone de sauvegarde
+    if (
+        touch.clientX >= dropZoneRect.left &&
+        touch.clientX <= dropZoneRect.right &&
+        touch.clientY >= dropZoneRect.top &&
+        touch.clientY <= dropZoneRect.bottom
+    ) {
+        const isGood = item.dataset.good === "true";
+        if (isGood) {
+            item.classList.add("correct");
+            score += 1;
+        } else {
+            item.classList.add("incorrect");
+            score -= 1;
+        }
+        item.setAttribute("draggable", "false");
+        saveZone.appendChild(item);
+        scoreDisplay.textContent = score;
+        checkAllGoodsSaved();
+    }
+    // Réinitialiser les styles
+    item.style.position = "";
+    item.style.left = "";
+    item.style.top = "";
+    item.style.zIndex = "";
+
+    item.removeEventListener("touchmove", handleTouchMove);
+    item.removeEventListener("touchend", handleTouchEnd);
+}
